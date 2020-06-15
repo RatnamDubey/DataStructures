@@ -101,6 +101,7 @@ class DoublyLinkList():
 
 
 # Linked List will perform all the operations that are mentioned above in the versions !! 
+# Implementation 
 
 s = DoublyLinkList()
 s.insert(10)
