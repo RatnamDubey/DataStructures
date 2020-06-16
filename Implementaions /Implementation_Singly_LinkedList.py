@@ -85,19 +85,16 @@ class Singly_Link_list():
 
 # Linked List will perform all the operations that are mentioned above in the versions !! 
 
-s = Singly_Link_list()
-s.insert(10)
-s.insert(20)
-s.insert(50)
-s.append(25,1)
-s.Delete(2)
-s.insert(55)
-s.insert(60)
-s.insert(65)
-
-
-
-print(s.view_list())
+# s = Singly_Link_list()
+# s.insert(10)
+# s.insert(20)
+# s.insert(50)
+# s.append(25,1)
+# s.Delete(2)
+# s.insert(55)
+# s.insert(60)
+# s.insert(65)
+# print(s.view_list())
 
 
 
