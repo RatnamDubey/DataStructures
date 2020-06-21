@@ -1,9 +1,20 @@
 # Implementation of the Binary tree 
 # Implement the binary tree using Linked list 
 
+## Abdul bari's playlist 
+### Insert the binarty tree using queue method 
+### How algo works 
+# - Create a root node 
+# - put that root node in a quere ; 
+# - remove from queue ; check if lefdt or right is null ; if null insert and add to queue 
+# - if n othing to add then simply put the child a none 
 
 ### Versions 
     # v1.0 basic tree creation with insertion properties 
+
+
+## import 
+import queue
 
 
 
@@ -13,38 +24,32 @@ class Node():
          self.lchild = None
          self.rchild = None
 
-class Binarytree():
 
-    def __init__(self):
-        self.head = None 
-       
-    def insert(self, val):
-        new_node_val = Node(val) 
-        traverse_point = self.head
-       
-        if self.head is None:
-            self.head = new_node_val
+class binaryTree():
 
-        else:
-             while traverse_point is not None:
-                print(traverse_point)
-                if val < traverse_point.data:
-                     print(val)
-                     traverse_point  = traverse_point.lchild 
-                     
-                else :
-                     traverse_point  =  traverse_point.rchild
-                print(traverse_point)    
+    def insert_tree(self):
+        q = queue.Queue()
+        var =  print("Enter the root node")
+        var = int(input())
+        root_node = Node(var)
+        q.put(root_node)
+        while not q.empty():
+            p = q.get()
+            print("Enter the left child")
+            var2 = int(input()) 
+            if (var2 != -1):
+                child_node = Node(var2)
+                q.put(child_node)
+                p.lchild = child_node            
 
-                
-             
-             traverse_point = new_node_val
-             print(traverse_point.data) #
+            print("Enter the right child")
+            var3 = int(input()) 
+            if (var3 != -1):
+                child_node = Node(var3)
+                q.put(child_node)
+                p.rchild = child_node
 
+        return root_node 
 
-
-b = Binarytree()
-b.insert(10)
-b.insert(9)
-print(b.head.lchild)
-
+c = binaryTree()
+c.insert_tree()
