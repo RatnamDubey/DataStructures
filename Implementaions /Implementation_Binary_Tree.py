@@ -51,5 +51,5 @@ class binaryTree():
 
         return root_node 
 
-c = binaryTree()
-c.insert_tree()
+# c = binaryTree()
+# c.insert_tree()
