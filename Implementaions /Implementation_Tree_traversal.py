@@ -106,6 +106,26 @@ class iterative_method():
                 queue1.put(temp.rchild) 
 
 
+
+
+######### Tree Nodes count ####
+
+    def tree_nodes_count(self,val):
+        stack = queue.Queue()
+        root = val 
+        cnt = 0 
+        stack.put(root)
+        while not stack.empty():
+            curr = stack.get()
+            cnt = cnt + 1 
+            if curr.lchild is not None:
+                stack.put(curr.lchild)
+            if curr.rchild is not None:
+                stack.put(curr.rchild)
+
+
+        print("The total number of nodes in the tree is " , cnt)
+
            
        
        
@@ -129,7 +149,7 @@ root = binaryTree().insert_tree()
 #c.preorder_trav(root)
 # print("recursive inorder")
 # c.inorder_trav(root)
-c.levelorder_trav_one(root)
+c.tree_nodes_count(root)
 # print("recursive postorder")
 # c.postorder_trav(root)
 
