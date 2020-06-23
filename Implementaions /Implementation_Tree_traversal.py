@@ -71,13 +71,42 @@ class iterative_method():
         while not stack2.empty():
             temp2 = stack2.get()
             print(temp2.data)
-            
+
+    ### Level Order Tree traversal ## Two queue system 
+    def levelorder_trav(self,val):
+        queue1 = queue.Queue()
+        queue2 = queue.Queue()
+        curr = val 
+        queue1.put(curr)
+        while not queue1.empty():
+            temp = queue1.get()
+            queue2.put(temp)
+            if temp.lchild is not None :
+                queue1.put(temp.lchild)
+            if temp.rchild is not None :
+                queue1.put(temp.rchild)
+                
+        while not queue2.empty():
+            temp2 = queue2.get()
+            print(temp2.data)
            
-        
+    ### Level Order traversal with one queue system 
+    def levelorder_trav_one(self,val):
+        queue1 = queue.Queue()
+        curr = val 
+        queue1.put(curr)
+        print(curr.data)
+        while not queue1.empty() :
+            temp = queue1.get()
+            if temp.lchild is not None:
+                print(temp.lchild.data)
+                queue1.put(temp.lchild)
+            if temp.rchild is not None:
+                print(temp.rchild.data)
+                queue1.put(temp.rchild) 
 
 
            
-       
        
        
        
@@ -100,7 +129,7 @@ root = binaryTree().insert_tree()
 #c.preorder_trav(root)
 # print("recursive inorder")
 # c.inorder_trav(root)
-c.postorder_trav(root)
+c.levelorder_trav_one(root)
 # print("recursive postorder")
 # c.postorder_trav(root)
 
