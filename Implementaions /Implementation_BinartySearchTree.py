@@ -56,7 +56,7 @@ class Binary_search_tree():
         trav_node = root_node
         q = None
         p = None
-        
+        r = None
         if trav_node.data == val:
             trav_node = trav_node.lchild
             while trav_node is not None:
@@ -83,41 +83,28 @@ class Binary_search_tree():
                 q.lchild = None 
 
             elif trav_node.lchild is None and trav_node.rchild is not None:
-                
                 print(trav_node.data)
                 trav_node = trav_node.rchild
                 trav_node.rchild = None 
                 q.rchild = trav_node
 
             elif trav_node.rchild is None and trav_node.lchild is not None:
-                
                 print(trav_node.data)
                 trav_node = trav_node.lchild
                 trav_node.lchild = None 
                 q.rchild = trav_node
 
             elif trav_node.rchild is not None and trav_node.lchild is not None:
-                #trav_node = trav_node.lchild
+                q = trav_node
+                trav_node = trav_node.lchild
                 while trav_node is not None:
+                    r = p
                     p = trav_node
                     trav_node = trav_node.rchild
-                
-                q.lchild.data = p.data 
-                p = None 
-
-
+                q.data = p.data 
+                r.rchild = p.lchild 
 
         return (root_node)
-
-
-
-
-
-
-
-
-
-
 
 
 ### Search Code in the BST 
@@ -159,9 +146,11 @@ root = c.insert_bst()
 print("Before Deletion")
 i.inorder_trav(root)
 #c.findnode(root)
-upd = c.delete_node(root, 15)
+upd = c.delete_node(root, 75)
 print("After Deletion")
 i.inorder_trav(upd)
+
+
 
 
 
