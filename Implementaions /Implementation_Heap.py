@@ -112,3 +112,44 @@ if __name__ == "__main__":
 
 
 
+##### Min heap 
+
+class minheap():
+
+    def __init__(self):
+        self.heap = []
+
+    def min_heap(self,value):
+
+        if len(self.heap) == 0:
+            self.heap.append(value)
+        else:
+            self.heap.append(value)
+            index = len(self.heap) -1 
+
+            if index%2 ==0 :
+                parent = index//2 -1 
+            else:
+                parent = index //2 
+
+            while parent >= 0 :
+
+                if self.heap[index] < self.heap[parent]:
+                    self.heap[index] , self.heap[parent] = self.heap[parent] ,self.heap[index]
+                    index = parent
+                    
+                    if index%2 == 0 :
+                        parent = index//2-1
+                    else:
+                        parent = index//2
+
+
+                else:
+                    break
+        print(self.heap)
+
+c = minheap()
+c.min_heap(5)
+c.min_heap(20)
+c.min_heap(2)
+c.min_heap(4)
