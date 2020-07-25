@@ -80,4 +80,4 @@ class Solution(object):
 
 
 c = Solution()
-print(c.longestCommonPrefix(["","b"]))
+print(c.longestCommonPrefix(["gh","g"]))
